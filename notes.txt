@@ -1,0 +1,25 @@
+installation
+basic setup
+pnpm over npm
+routing
+link tag
+link tag over a tag
+how to create a route? -> folder -> page.tsx(must name)
+
+
+dynamic routing
+
+interface blogPageProps {
+  params: Promise<{ blogId: string }>;
+}
+
+
+// blogId name must be same as folder name, folder name: [blogId]->page.tsx
+export default async function blogIdPage({ params }: blogPageProps) {
+  const { blogId } = await params;
+  return (
+    <div>
+      <h1>{blogId}</h1>
+    </div>
+  );
+}
